@@ -1,0 +1,134 @@
+body {
+  background-color: #F1F4F9;
+}
+
+.pageContent {
+  width: 1000px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.signupBox, .loginBox {
+  background-color: #FFFFFF;
+  padding: 10px;
+}
+
+.errorMsg {
+  color: red;
+}
+
+.headerBar {
+  background-color: #F1F4F9;
+}
+
+.appTitle {
+  font-weight: bold;
+  font-size: 24px;
+}
+
+.loginLink, .signupLink, .logoutButton, .userName  {
+  float: right;
+  margin-bottom: 5px;
+  margin-right: 5px;
+}
+
+.logoutButton {
+  background-color: red;
+  color: #FFFFFF;
+}
+
+.userName {
+  padding: 5px 0px;
+}
+
+.signupLink {
+  padding: 5px;
+  text-decoration: underline;
+}
+
+.loginLink {
+  padding: 5px 0px;
+  text-decoration: underline;
+}
+
+.introContent {
+  background-color: #FFFFFF;
+  padding: 10px;
+}
+
+.gridContent {
+  background-color: #FFFFFF;
+  padding: 10px;
+}
+
+.gridStyle {
+  border: 1px solid rgb(212, 212, 212);
+  width: 980px;
+  height: 600px;
+}
+
+.ngCellElement {
+  line-height: 34px;
+}
+ 
+.lastColumnButtonCell {
+  display:table-cell;
+  vertical-align:middle;
+  width: 45px;
+  text-align: center;
+}
+
+.lastColumnButton {
+  padding: 2px 4px;
+}
+
+.ngCellText {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.addButton {
+  float: right;
+  margin-bottom: 5px;
+  margin-right: 5px;
+}
+
+.printButton {
+  float: right;
+}
+
+.modalTitle {
+  float: left;
+}
+
+.buttonBar {
+  width: 980px;
+  overflow: auto;
+}
+
+.internalLabel {
+  font-weight: normal;
+}
+
+.alertModal .modal-dialog {
+  width: 190px;
+}
+
+.alertModal .modal-body, .alertModal .modal-footer {
+  text-align: center;
+}
+
+@media print {
+  body {
+    visibility: hidden;
+  }
+  
+  .printable {
+    visibility: visible;
+  }
+  
+  .printable button {
+    visibility: hidden;
+  }
+}

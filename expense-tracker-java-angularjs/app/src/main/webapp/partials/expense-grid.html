@@ -1,0 +1,13 @@
+<div class="headerBar">
+  <span class="appTitle">Expense Tracker</span>
+  <button ng-click="logout()" class="logoutButton btn btn-default">Logout</button>
+  <span class="userName">{{user.username}}</span>
+</div>
+<div class="gridContent">
+  <div class="buttonBar">
+    <button ng-click="filter()" class="btn btn-default filterButton">Filter</button>
+    <button ng-click="generateReport()" class="btn btn-default reportButton">Generate weekly report</button>
+    <button ng-click="addRow()" class="btn btn-default addButton">Add Row</button>
+  </div>
+  <div class="gridStyle" ng-grid="gridOptions"></div> 
+</div>

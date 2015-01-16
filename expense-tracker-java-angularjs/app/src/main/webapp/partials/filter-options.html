@@ -1,0 +1,61 @@
+<div class="modal-body">
+
+<div class="form-group">
+  <label>Date</label>
+  <div class="form-inline">
+    <div class="form-group">
+      <label for="dateFromFilter" class="internalLabel">From</label>
+      <input type="date" ng-model=filterOptions.dateFrom class="form-control" id="dateFromFilter"/>
+    </div>
+    <div class="form-group">
+      <label for="dateToFilter" class="internalLabel">To</label>
+      <input type="date" ng-model=filterOptions.dateTo class="form-control" id="dateToFilter"/>
+    </div>
+  </div>
+</div>
+
+<div class="form-group">
+  <label>Time</label>
+  <div class="form-inline">
+    <div class="form-group">
+      <label for="timeFromFilter" class="internalLabel">From</label>
+      <input type="time" ng-model=filterOptions.timeFrom class="form-control" id="timeFromFilter"/>
+    </div>
+    <div class="form-group">
+      <label for="timeToFilter" class="internalLabel">To</label>
+      <input type="time" ng-model=filterOptions.timeTo class="form-control" id="timeToFilter"/>
+    </div>
+  </div>
+</div>
+
+<div class="form-group">
+  <label for="descriptionFilter">Description</label>
+  <input type="text" ng-model=filterOptions.description class="form-control" id="descriptionFilter"/>
+</div>
+
+<div class="form-group">
+  <label>Amount</label>
+  <div class="form-inline">
+    <div class="form-group">
+      <label for="amountMoreThanFilter" class="internalLabel">More than</label>
+      <input type="number" ng-model=filterOptions.amountMoreThan class="form-control" id="amountMoreThanFilter"/>
+    </div>
+    <div class="form-group">
+      <label for="amountLessThanFilter" class="internalLabel">Less than</label>
+      <input type="number" ng-model=filterOptions.amountLessThan class="form-control" id="amountLessThanFilter"/>
+    </div>
+  </div>
+</div>
+
+<div class="form-group">
+  <label for="commentFilter">Comment</label>
+  <input type="text" ng-model=filterOptions.comment class="form-control" id="commentFilter"/>
+</div>
+
+</div>
+
+<div class="modal-footer">
+  <button ng-click="applyFilter()">Apply</button>
+  <button ng-click="clearFilter()">Clear</button>
+</div>
+		

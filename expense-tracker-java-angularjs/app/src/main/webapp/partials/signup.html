@@ -1,0 +1,16 @@
+<div class="signupBox form-group">
+  <h3>Create your Expense Tracker account</h3>
+  <div>
+    <div>
+      <label for="username">Choose your username:</label>
+      <input type="text" ng-model="username" id="username" class="form-control">
+    </div>
+    <div>
+      <label for="password">Create your password:</label>
+      <input type="password" ng-model="password" id="password" class="form-control">      
+    </div>
+    <div>
+      <button ng-click="signup()" class="btn btn-default signupButton">Create account</button>
+      <span ng-show="hasError" class="errorMsg">{{errorMsg}}</span>
+  </div>
+</div>

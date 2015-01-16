@@ -1,0 +1,8 @@
+<div ng-style="{height: rowHeight}" class="lastColumnButtonCell">
+  <button ng-if="row.entity.id" type="button" class="btn btn-default lastColumnButton" ng-click="removeRow()">
+    <span class="glyphicon glyphicon-remove"></span>
+  </button>
+  <button ng-if="!row.entity.id" type="button" class="btn btn-default lastColumnButton" ng-click="saveNewRow()">
+    <span class="glyphicon glyphicon-save"></span>
+  </button>
+</div>
