@@ -22,7 +22,7 @@ public class ExpenseServiceTests {
         
         Validator mockValidator = Mockito.mock(Validator.class);
         
-        ExpenseService service = new ExpenseService(mockRepository, mockUserService, mockValidator);
+        ExpenseService service = new DefaultExpenseService(mockRepository, mockUserService, mockValidator);
        
         Expense expense = new Expense();
         service.addExpense(2, expense);
@@ -38,7 +38,7 @@ public class ExpenseServiceTests {
         
         Validator mockValidator = Mockito.mock(Validator.class);
         
-        ExpenseService service = new ExpenseService(mockRepository, mockUserService, mockValidator);
+        ExpenseService service = new DefaultExpenseService(mockRepository, mockUserService, mockValidator);
         
         Expense expense = new Expense();
         service.updateExpense(1, 2, expense);
@@ -59,7 +59,7 @@ public class ExpenseServiceTests {
         
         Validator mockValidator = Mockito.mock(Validator.class);
         
-        ExpenseService service = new ExpenseService(mockRepository, mockUserService, mockValidator);
+        ExpenseService service = new DefaultExpenseService(mockRepository, mockUserService, mockValidator);
         
         Expense expense = new Expense();
         service.updateExpense(2, 1, expense);
@@ -80,7 +80,7 @@ public class ExpenseServiceTests {
         
         Validator mockValidator = Mockito.mock(Validator.class);
         
-        ExpenseService service = new ExpenseService(mockRepository, mockUserService, mockValidator);
+        ExpenseService service = new DefaultExpenseService(mockRepository, mockUserService, mockValidator);
       
         service.deleteExpense(2, 1);
     }

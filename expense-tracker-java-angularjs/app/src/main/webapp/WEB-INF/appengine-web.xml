@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<appengine-web-app xmlns="http://appengine.google.com/ns/1.0">
+  <application>expense-tracker-36</application>
+  <version>1</version>
+  <threadsafe>true</threadsafe>
+  <static-files>
+    <include path="/css/**" />
+    <include path="/js/**" />
+    <include path="/partials/**" />
+  </static-files>
+  
+  <system-properties>
+    <property name="apiEndpoint" value="https://flowing-perigee-832.appspot.com" />
+    <property name="java.util.logging.config.file" value="WEB-INF/classes/logging.properties"/>
+    <property name="logback.configurationFile" value="WEB-INF/classes/logback-gae.xml"/>
+  </system-properties>
+</appengine-web-app>

@@ -10,8 +10,10 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.validation.beanvalidation.LocalValidatorFactoryBean;
 
 import com.shelleynason.expensetracker.service.expense.ExpenseRepository;
+import com.shelleynason.expensetracker.service.expense.DefaultExpenseService;
 import com.shelleynason.expensetracker.service.expense.ExpenseService;
 import com.shelleynason.expensetracker.service.user.UserRepository;
+import com.shelleynason.expensetracker.service.user.DefaultUserService;
 import com.shelleynason.expensetracker.service.user.UserService;
 
 @Configuration
@@ -30,12 +32,12 @@ public class ExpenseTrackerServiceSpringConfig {
 
     @Bean
     public UserService userService() {
-        return new UserService(userRepository, passwordService(), validator());
+        return new DefaultUserService(userRepository, passwordService(), validator());
     }
 
     @Bean
     public ExpenseService expenseService() {
-        return new ExpenseService(expenseRepository, userService(), validator());
+        return new DefaultExpenseService(expenseRepository, userService(), validator());
     }
     
     @Bean

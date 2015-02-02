@@ -12,8 +12,24 @@
 	</context-param>
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
-		<param-value>com.shelleynason.expensetracker.service.config</param-value>
+		<param-value>com.shelleynason.expensetracker.service.config
+		</param-value>
 	</context-param>
+
+	<filter>
+		<filter-name>corsFilter</filter-name>
+		<filter-class>org.springframework.web.filter.DelegatingFilterProxy
+		</filter-class>
+		<init-param>
+			<param-name>targetFilterLifecycle</param-name>
+			<param-value>true</param-value>
+		</init-param>
+	</filter>
+
+	<filter-mapping>
+		<filter-name>corsFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
 
 	<filter>
 		<filter-name>shiroFilter</filter-name>
@@ -41,7 +57,8 @@
 		</init-param>
 		<init-param>
 			<param-name>contextConfigLocation</param-name>
-			<param-value>com.shelleynason.expensetracker.service.config.web</param-value>
+			<param-value>com.shelleynason.expensetracker.service.config.web
+			</param-value>
 		</init-param>
 	</servlet>
 	<servlet-mapping>

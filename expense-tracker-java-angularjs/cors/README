@@ -1,0 +1,5 @@
+This project contains a CORS servlet filter that was copied with modifications from Tomcat 7.0.42.
+The filter is useful in contexts other than Tomcat and repackaging it here allows it to be used without
+requiring Tomcat dependencies.
+
+The NOTICE and LICENSE files required by the Apache 2 license are included with the project.

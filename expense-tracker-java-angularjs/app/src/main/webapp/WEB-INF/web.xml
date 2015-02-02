@@ -21,12 +21,18 @@
 		</init-param>
 		<init-param>
 			<param-name>contextConfigLocation</param-name>
-			<param-value>com.shelleynason.expensetracker.app.config.web</param-value>
+			<param-value>com.shelleynason.expensetracker.app.config.web
+			</param-value>
 		</init-param>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>app</servlet-name>
 		<url-pattern>/</url-pattern>
 	</servlet-mapping>
+
+	<mime-mapping>
+		<extension>woff</extension>
+		<mime-type>application/font-woff</mime-type>
+	</mime-mapping>
 
 </web-app>

@@ -49,6 +49,6 @@ public class ExpenseTrackerAppSpringWebConfig extends WebMvcConfigurerAdapter {
 
     @Bean
     public HomeController homeController() {
-        return new HomeController(env.getProperty("apiEndpoint"));
+        return new HomeController(env.getRequiredProperty("apiEndpoint"));
     }
 }

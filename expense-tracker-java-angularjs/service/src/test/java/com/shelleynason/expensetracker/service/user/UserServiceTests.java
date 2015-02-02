@@ -26,7 +26,7 @@ public class UserServiceTests {
         
         PasswordService mockPasswordService = Mockito.mock(PasswordService.class);
         
-        UserService userService = new UserService(mockRepository, mockPasswordService, mockValidator);
+        UserService userService = new DefaultUserService(mockRepository, mockPasswordService, mockValidator);
         userService.getUserById(2);
     }
     
@@ -39,7 +39,7 @@ public class UserServiceTests {
         
         PasswordService mockPasswordService = Mockito.mock(PasswordService.class);
         
-        UserService userService = new UserService(mockRepository, mockPasswordService, mockValidator);
+        UserService userService = new DefaultUserService(mockRepository, mockPasswordService, mockValidator);
         userService.getUserByUsername("bob");
     }
     
@@ -56,7 +56,7 @@ public class UserServiceTests {
         PasswordService mockPasswordService = Mockito.mock(PasswordService.class);
         Mockito.when(mockPasswordService.encryptPassword(password)).thenReturn("yyyyyyyyyy%");
         
-        UserService userService = new UserService(mockRepository, mockPasswordService, mockValidator);
+        UserService userService = new DefaultUserService(mockRepository, mockPasswordService, mockValidator);
         
         User user = new User();
         user.setUsername("bob");

@@ -12,16 +12,11 @@ import org.apache.shiro.web.util.WebUtils;
  * (Shiro's {@link SslFilter} performs a redirect to the https port.)
  */
 public class NonRedirectingSslFilter extends AccessControlFilter {
-    private final int sslPort;
-
-    public NonRedirectingSslFilter(int sslPort) {
-        this.sslPort = sslPort;
-    }
     
     @Override
     protected boolean isAccessAllowed(ServletRequest request,
             ServletResponse response, Object mappedValue) throws Exception {
-        return sslPort == request.getServerPort() && request.isSecure();
+        return request.isSecure();
     }
     
     @Override

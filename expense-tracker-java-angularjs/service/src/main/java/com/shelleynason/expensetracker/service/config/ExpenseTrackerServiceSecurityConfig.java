@@ -19,6 +19,7 @@ import org.springframework.context.annotation.PropertySources;
 import org.springframework.core.env.Environment;
 
 import com.shelleynason.expensetracker.service.authentication.AuthenticationService;
+import com.shelleynason.expensetracker.service.security.CorsFilter;
 import com.shelleynason.expensetracker.service.security.ExpenseTrackerServiceRealm;
 import com.shelleynason.expensetracker.service.security.NonRedirectingSslFilter;
 import com.shelleynason.expensetracker.service.security.TokenBasedAuthenticationFilter;
@@ -68,8 +69,38 @@ public class ExpenseTrackerServiceSecurityConfig {
     
     @Bean
     public NonRedirectingSslFilter nonRedirectingSslFilter() {
-        int sslPort = env.getProperty("security.sslPort",Integer.class);
-        return new NonRedirectingSslFilter(sslPort);
+        return new NonRedirectingSslFilter();
+    }
+    
+    @Bean
+    public CorsFilter corsFilter() {
+        // By default, all origins are allowed to make requests.
+        String allowedOrigins = env.getProperty("cors.allowedOrigins", "*");
+        
+        // By default, following methods are supported: GET, POST, HEAD and OPTIONS.
+        String allowedHttpMethods = env.getProperty("cors.allowedHttpMethods", "GET,POST,HEAD,OPTIONS");
+        
+        // By default, following headers are supported:
+        // Origin,Accept,X-Requested-With, Content-Type,
+        // Access-Control-Request-Method, and Access-Control-Request-Headers.
+        String allowedHttpHeaders = env.getProperty("cors.allowedHttpHeaders",
+                "Origin,Accept,X-Requested-With,Content-Type," +
+                "Access-Control-Request-Method,Access-Control-Request-Headers");
+        
+        // By default, none of the headers are exposed in response.
+        String exposedHeaders = env.getProperty("cors.exposedHeaders", "");
+        
+        // By default, support credentials is turned on.
+        boolean supportsCredentials = env.getProperty("cors.supportsCredentials", Boolean.class, true);
+        
+        // By default, time duration to cache pre-flight response is 30 mins.
+        long preflightMaxAge = env.getProperty("cors.preflightMaxAge", Long.class, 1800L);
+        
+        // By default, request is decorated with CORS attributes.
+        boolean decorateRequest = env.getProperty("cors.decorateRequest", Boolean.class, true);
+        
+        return new CorsFilter(allowedOrigins, allowedHttpMethods,
+                allowedHttpHeaders, exposedHeaders, supportsCredentials, preflightMaxAge, decorateRequest);
     }
     
     @Bean
